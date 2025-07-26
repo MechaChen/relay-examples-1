@@ -1,5 +1,25 @@
 import * as React from "react";
+import { graphql } from 'relay-runtime';
+
 import Story from "./Story";
+
+const NewsfeedQuery = graphql`
+  query NewsfeedQuery {
+    topStory {
+      title
+      summary
+      poster {
+        name
+        profilePicture {
+          url
+        }
+      }
+      thumbnail {
+        url
+      }
+    }
+  }
+`;
 
 export default function Newsfeed() {
   const story = {
