@@ -1,4 +1,6 @@
 import * as React from "react";
+
+import Timestamp from "./Timestamp";
 import Card from "./Card";
 import Heading from "./Heading";
 import PosterByline, { type Props as PosterBylineProps } from "./PosterByline";
