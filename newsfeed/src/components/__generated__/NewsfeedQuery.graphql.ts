@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<358c72c4f02e7f3b5b96e066728df183>>
+ * @generated SignedSource<<f6037ff890a37d9e7c3039c34b799f01>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -116,6 +116,10 @@ return {
                 "storageKey": null
               },
               {
+                "kind": "TypeDiscriminator",
+                "abstractKey": "__isActor"
+              },
+              {
                 "alias": null,
                 "args": null,
                 "kind": "ScalarField",
@@ -153,12 +157,12 @@ return {
     ]
   },
   "params": {
-    "cacheID": "a59a70bb2e872df5487a4840ed192c87",
+    "cacheID": "65552b01365b77856bc0ad2dca0a02a4",
     "id": null,
     "metadata": {},
     "name": "NewsfeedQuery",
     "operationKind": "query",
-    "text": "query NewsfeedQuery {\n  topStory {\n    ...StoryFragment\n    id\n  }\n}\n\nfragment StoryFragment on Story {\n  title\n  summary\n  createdAt\n  poster {\n    __typename\n    name\n    profilePicture {\n      url\n    }\n    id\n  }\n  thumbnail {\n    url\n  }\n}\n"
+    "text": "query NewsfeedQuery {\n  topStory {\n    ...StoryFragment\n    id\n  }\n}\n\nfragment PosterBylineFragment on Actor {\n  __isActor: __typename\n  name\n  profilePicture {\n    url\n  }\n}\n\nfragment StoryFragment on Story {\n  title\n  summary\n  createdAt\n  poster {\n    __typename\n    ...PosterBylineFragment\n    id\n  }\n  thumbnail {\n    url\n  }\n}\n"
   }
 };
 })();
