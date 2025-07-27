@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<9a4065cc0005b60480677246f32bc5e8>>
+ * @generated SignedSource<<b21f2449f2ac8b70b43f2b5f22413f11>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -120,6 +120,7 @@ return {
                 "kind": "TypeDiscriminator",
                 "abstractKey": "__isActor"
               },
+              (v0/*: any*/),
               {
                 "alias": null,
                 "args": null,
@@ -156,8 +157,7 @@ return {
                   (v1/*: any*/)
                 ],
                 "storageKey": null
-              },
-              (v0/*: any*/)
+              }
             ],
             "storageKey": null
           },
@@ -192,12 +192,12 @@ return {
     ]
   },
   "params": {
-    "cacheID": "803464f24da4aac6afc3e3b5da5b6c60",
+    "cacheID": "47cd3ab3a6009811bd6b51ca34c12538",
     "id": null,
     "metadata": {},
     "name": "NewsfeedQuery",
     "operationKind": "query",
-    "text": "query NewsfeedQuery {\n  topStories {\n    id\n    ...StoryFragment\n  }\n}\n\nfragment ImageFragment_3XLoCc on Image {\n  url(width: 60, height: 60)\n  altText\n}\n\nfragment ImageFragment_4d94KW on Image {\n  url(width: 300)\n  altText\n}\n\nfragment PosterBylineFragment on Actor {\n  __isActor: __typename\n  name\n  profilePicture {\n    ...ImageFragment_3XLoCc\n  }\n}\n\nfragment StoryFragment on Story {\n  title\n  summary\n  createdAt\n  poster {\n    __typename\n    ...PosterBylineFragment\n    id\n  }\n  thumbnail {\n    ...ImageFragment_4d94KW\n  }\n}\n"
+    "text": "query NewsfeedQuery {\n  topStories {\n    id\n    ...StoryFragment\n  }\n}\n\nfragment ImageFragment_3XLoCc on Image {\n  url(width: 60, height: 60)\n  altText\n}\n\nfragment ImageFragment_4d94KW on Image {\n  url(width: 300)\n  altText\n}\n\nfragment PosterBylineFragment on Actor {\n  __isActor: __typename\n  id\n  name\n  profilePicture {\n    ...ImageFragment_3XLoCc\n  }\n}\n\nfragment StoryFragment on Story {\n  title\n  summary\n  createdAt\n  poster {\n    __typename\n    ...PosterBylineFragment\n    id\n  }\n  thumbnail {\n    ...ImageFragment_4d94KW\n  }\n}\n"
   }
 };
 })();

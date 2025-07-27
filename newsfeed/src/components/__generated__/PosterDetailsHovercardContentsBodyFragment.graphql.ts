@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<b780cc076b35df8225533610048bf0fc>>
+ * @generated SignedSource<<6ed8e4d5bfb199284bb9e03e66e416f8>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -8,15 +8,15 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { Fragment, ReaderFragment } from 'relay-runtime';
+import { ReaderFragment } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
 export type PosterDetailsHovercardContentsBodyFragment$data = {
   readonly id: string;
-  readonly joined: string | null;
-  readonly name: string | null;
+  readonly joined: string | null | undefined;
+  readonly name: string | null | undefined;
   readonly profilePicture: {
     readonly " $fragmentSpreads": FragmentRefs<"ImageFragment">;
-  } | null;
+  } | null | undefined;
   readonly " $fragmentType": "PosterDetailsHovercardContentsBodyFragment";
 };
 export type PosterDetailsHovercardContentsBodyFragment$key = {

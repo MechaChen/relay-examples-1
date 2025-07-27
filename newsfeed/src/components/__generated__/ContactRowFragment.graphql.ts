@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<1ea97796d43d2f5b8f664667760fa932>>
+ * @generated SignedSource<<0d61612e1df3a10863cd764c869bde4c>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -8,13 +8,13 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { Fragment, ReaderFragment } from 'relay-runtime';
+import { ReaderFragment } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
 export type ContactRowFragment$data = {
-  readonly name: string | null;
+  readonly name: string | null | undefined;
   readonly profilePicture: {
     readonly " $fragmentSpreads": FragmentRefs<"ImageFragment">;
-  } | null;
+  } | null | undefined;
   readonly " $fragmentType": "ContactRowFragment";
 };
 export type ContactRowFragment$key = {
