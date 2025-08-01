@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<fca14201bdf4b9e18101f543b4ad7cac>>
+ * @generated SignedSource<<10cd567d99be96da9805aff4f88b2bc0>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -8,15 +8,15 @@
 /* eslint-disable */
 // @ts-nocheck
 
-import { ConcreteRequest, Query } from 'relay-runtime';
+import { ConcreteRequest } from 'relay-runtime';
 import { FragmentRefs } from "relay-runtime";
 export type ContactsListRefetchQuery$variables = {
-  search?: string | null;
+  search?: string | null | undefined;
 };
 export type ContactsListRefetchQuery$data = {
   readonly viewer: {
     readonly " $fragmentSpreads": FragmentRefs<"ContactsListFragment">;
-  } | null;
+  } | null | undefined;
 };
 export type ContactsListRefetchQuery = {
   response: ContactsListRefetchQuery$data;
@@ -156,6 +156,6 @@ return {
 };
 })();
 
-(node as any).hash = "a58a5b12c5813e115be4ed129437cb3a";
+(node as any).hash = "69dd36851df8a49c261a41bd9e053088";
 
 export default node;

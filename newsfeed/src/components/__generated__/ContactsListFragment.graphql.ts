@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<ec81e7be07861b140edc0ae171999a7f>>
+ * @generated SignedSource<<6aec4b50a2361f284e0f05d8faae9a7c>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -22,15 +22,37 @@ export type ContactsListFragment$key = {
   readonly " $fragmentSpreads": FragmentRefs<"ContactsListFragment">;
 };
 
+import ContactsListRefetchQuery_graphql from './ContactsListRefetchQuery.graphql';
+
 const node: ReaderFragment = {
-  "argumentDefinitions": [],
+  "argumentDefinitions": [
+    {
+      "defaultValue": null,
+      "kind": "LocalArgument",
+      "name": "search"
+    }
+  ],
   "kind": "Fragment",
-  "metadata": null,
+  "metadata": {
+    "refetch": {
+      "connection": null,
+      "fragmentPathInResult": [
+        "viewer"
+      ],
+      "operation": ContactsListRefetchQuery_graphql
+    }
+  },
   "name": "ContactsListFragment",
   "selections": [
     {
       "alias": null,
-      "args": null,
+      "args": [
+        {
+          "kind": "Variable",
+          "name": "search",
+          "variableName": "search"
+        }
+      ],
       "concreteType": null,
       "kind": "LinkedField",
       "name": "contacts",
@@ -56,6 +78,6 @@ const node: ReaderFragment = {
   "abstractKey": null
 };
 
-(node as any).hash = "3c36ab9e0b34297d1cbbeba8904fdbe0";
+(node as any).hash = "69dd36851df8a49c261a41bd9e053088";
 
 export default node;
