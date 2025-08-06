@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<dccdebec799226cf2f881e428b1836e0>>
+ * @generated SignedSource<<1a0e087c54c2526652c92dde93538906>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -226,16 +226,16 @@ return {
     ]
   },
   "params": {
-    "cacheID": "7a813b166f449934652018611d56d943",
+    "cacheID": "e4300021c8934eb53e808f9c3d40b8d2",
     "id": null,
     "metadata": {},
     "name": "StoryCommentsSectionPaginationQuery",
     "operationKind": "query",
-    "text": "query StoryCommentsSectionPaginationQuery(\n  $count: Int = 3\n  $cursor: String\n  $id: ID!\n) {\n  node(id: $id) {\n    __typename\n    ...StoryCommentsSectionFragment_1G22uz\n    id\n  }\n}\n\nfragment CommentFragment on Comment {\n  text\n}\n\nfragment StoryCommentsSectionFragment_1G22uz on Story {\n  comments(first: $count, after: $cursor) {\n    edges {\n      node {\n        id\n        ...CommentFragment\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n  id\n}\n"
+    "text": "query StoryCommentsSectionPaginationQuery(\n  $count: Int = 3\n  $cursor: String\n  $id: ID!\n) {\n  node(id: $id) {\n    __typename\n    ...StoryCommentsSectionFragment_1G22uz\n    id\n  }\n}\n\nfragment CommentFragment on Comment {\n  text\n}\n\nfragment StoryCommentsComposerFragment on Story {\n  id\n}\n\nfragment StoryCommentsSectionFragment_1G22uz on Story {\n  comments(first: $count, after: $cursor) {\n    edges {\n      node {\n        id\n        ...CommentFragment\n        __typename\n      }\n      cursor\n    }\n    pageInfo {\n      hasNextPage\n      endCursor\n    }\n  }\n  ...StoryCommentsComposerFragment\n  id\n}\n"
   }
 };
 })();
 
-(node as any).hash = "9ec966a21137ef3b94a54693b5961f66";
+(node as any).hash = "1fea24b259d664bf22fd7baaaf0dcea8";
 
 export default node;

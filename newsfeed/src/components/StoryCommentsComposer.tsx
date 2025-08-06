@@ -1,6 +1,6 @@
 import * as React from "react";
 import { graphql } from "relay-runtime";
-import { useFragment } from "react-relay";
+import { useFragment, useMutation, ConnectionHandler } from "react-relay";
 
 import type { StoryCommentsComposerFragment$key } from "./__generated__/StoryCommentsComposerFragment.graphql";
 
@@ -16,10 +16,43 @@ const StoryCommentsComposerFragment = graphql`
   }
 `;
 
+const StoryCommentsComposerPostCommentMutation = graphql`
+  mutation StoryCommentsComposerPostCommentMutation(
+    $id: ID!,
+    $text: String!,
+    $connections: [ID!]!
+  ) {
+    postStoryComment(id: $id, text: $text) {
+      commentEdge
+        @prependEdge(connections: $connections)
+      {
+        node {
+          id
+          text
+        }
+      }
+    }
+  }
+`;
+
 export default function StoryCommentsComposer({ story }: Props) {
   const data = useFragment(StoryCommentsComposerFragment, story);
   const [text, setText] = useState("");
+  const [commitMutation, isMutationInFlight] = useMutation(StoryCommentsComposerPostCommentMutation);
+
   function onPost() {
+    setText('');
+    const connectionID = ConnectionHandler.getConnectionID(
+      data.id,
+      'StoryCommentsSectionFragment_comments'
+    )
+    commitMutation({
+      variables: {
+        id: data.id,
+        text,
+        connections: [connectionID],
+      },
+    })
     // TODO post the comment here
   }
   return (

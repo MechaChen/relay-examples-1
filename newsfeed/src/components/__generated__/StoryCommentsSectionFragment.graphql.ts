@@ -1,5 +1,5 @@
 /**
- * @generated SignedSource<<7a0b9f63011268d616e091af54d3a005>>
+ * @generated SignedSource<<f169f2c406b4d65cd49a12ea786a3e23>>
  * @lightSyntaxTransform
  * @nogrep
  */
@@ -23,6 +23,7 @@ export type StoryCommentsSectionFragment$data = {
     } | null | undefined;
   } | null | undefined;
   readonly id: string;
+  readonly " $fragmentSpreads": FragmentRefs<"StoryCommentsComposerFragment">;
   readonly " $fragmentType": "StoryCommentsSectionFragment";
 };
 export type StoryCommentsSectionFragment$key = {
@@ -165,6 +166,11 @@ return {
       ],
       "storageKey": null
     },
+    {
+      "args": null,
+      "kind": "FragmentSpread",
+      "name": "StoryCommentsComposerFragment"
+    },
     (v1/*: any*/)
   ],
   "type": "Story",
@@ -172,6 +178,6 @@ return {
 };
 })();
 
-(node as any).hash = "9ec966a21137ef3b94a54693b5961f66";
+(node as any).hash = "1fea24b259d664bf22fd7baaaf0dcea8";
 
 export default node;
