@@ -3,6 +3,7 @@ import { graphql } from "relay-runtime";
 import { useFragment, useMutation } from "react-relay";
 
 import type { StoryLikeButtonFragment$key } from "./__generated__/StoryLikeButtonFragment.graphql";
+import type { StoryLikeButton_updatable$key } from "./__generated__/StoryLikeButton_updatable.graphql";
 
 type Props = {
   story: StoryLikeButtonFragment$key;
@@ -43,6 +44,23 @@ export default function StoryLikeButton({ story }: Props): React.ReactElement {
       variables: {
         id: data.id,
         doesLike: !data.doesViewerLike,
+      },
+      optimisticUpdater: (store) => {
+        const fragment = graphql`
+          fragment StoryLikeButton_updatable on Story
+          @updatable
+          {
+            likeCount
+            doesViewerLike
+          }
+        `;
+        const { updatableData } = store.readUpdatableFragment<StoryLikeButton_updatable$key>(
+          fragment,
+          story
+        );
+        const alreadyLiked = updatableData.doesViewerLike;
+        updatableData.doesViewerLike = !alreadyLiked;
+        updatableData.likeCount += (alreadyLiked ? -1 : 1);
       }
     });
   };
